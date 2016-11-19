@@ -19,17 +19,6 @@
   <!-- CSS general-->
   <link href="css/index.css" rel="stylesheet">
 
-  <!-- CSS Header-->
-  <link href="css/header.css" rel="stylesheet">
-
-  <!-- CSS body-->
-  <link href="css/body.css" rel="stylesheet">
-
-  <!-- CSS cowork-->
-  <link href="css/cowork.css" rel="stylesheet">
-
-  <!-- CSS footer-->
-  <link href="css/footer.css" rel="stylesheet">
 
   <!-- Custom Fonts -->
   <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -49,14 +38,12 @@
 
 <body>
 
-<?PHP
+    @include('header')
+    @include('body')
+    @include('cowork')
+    @include('footer')
 
-include_once(resource_path().'/views/header.blade.php');
-include_once(resource_path().'/views/body.blade.php');
-include_once(resource_path().'/views/cowork.blade.php');
-include_once(resource_path().'/views/footer.blade.php');
 
-?>
 
   <!-- jQuery -->
   <script   src="js/jquery-2.1.1.js"></script>
