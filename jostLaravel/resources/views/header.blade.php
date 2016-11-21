@@ -1,4 +1,3 @@
-
   <nav class="navbar navbar-default">
     <div class="container-fluid">
 
@@ -10,7 +9,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.php"><img class="logo" src="img/compass.png"></a>
+        <a class="navbar-brand" href="/"><img class="logo" src="img/compass.png"></a>
       </div>
 
       <!-- MENU -->
@@ -18,12 +17,12 @@
         <div class="containerform">
           <form class="form-position body_searchform" method="get" action="jost_search.php">
             <img class="textcenter" src="img/glass.png">
-            <input type="text" name="location" class="location-border body_searchform_bar" placeholder="Buscar">
+            <input type="text" name="location" class="location-border body_searchform_bar" placeholder="¿Dónde querés trabajar?">
             </input>
           </form>
         </div>
         <ul class="nav navbar-nav navbar-right">
-          <li class="host"><a href="host.php">¿Querés Hostear?</a></li>
+          <li class="host"><a href="/host">Convertite en Host</a></li>
           <li class="openhelp"><a href="ayuda.php" class="helpmobile"><img src="img/faq.png">Ayuda</a><a class="helpdesktop"><img src="img/faq.png"></a></li>
           <li class="opensession"><a href="sesion.php" class="sessionmobile"><img src="img/user.png">Iniciar sesión</a><a class="sessiondesktop"><img src="img/user.png"></a></li>
 

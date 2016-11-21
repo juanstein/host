@@ -11,9 +11,21 @@
 |
 */
 
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/index', function () {
     return view('index');
+});
+Route::get('/help', function () {
+    return view('ayuda');
+});
+Route::get('/host', function () {
+    return view('host');
+});
+Route::get('/register', function () {
+    return view('registracion');
+});
+Route::get('/login', function () {
+    return view('sesion');
 });

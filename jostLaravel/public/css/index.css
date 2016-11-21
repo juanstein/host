@@ -120,6 +120,7 @@ body {
     height: 550px;
     /*background-color: rgba(0, 0, 0, 0.65);*/
     background: url(../img/baires.png);
+
 }
 
 .header-darkener {
@@ -260,7 +261,7 @@ body {
 
 .footer_logo a {
     padding:0;
-    margin-top: 50px;
+    margin-top: 20px;
     text-decoration: none;
     color:#fff;
     font-size: 12px;
@@ -275,7 +276,7 @@ body {
 }
 
 .socialcolumn {
-    padding-top: 25px;
+    padding-top: 5px;
     padding-left: 20px;
 }
 
@@ -301,7 +302,7 @@ body {
     border-radius: 20px;
     margin-bottom: 8px;
     float: left;
-    margin-left: 10px;
+    /*margin-left: 10px;*/
     width:40px;
 }
 
@@ -647,6 +648,30 @@ body {
 
 /* BODY */
 
+    .titulo {
+        top:120px;
+        position:relative;
+        text-align: center;
+        font-family: 'Montserrat',sans-serif;
+        color: white;
+    }
+    .titulo h1 {
+        font-size: 64px;
+        font-weight: 800;
+    }
+    .subtitulo {
+        top:130px;
+        position:relative;
+        text-align: center;
+        font-family: 'Montserrat',sans-serif;
+        color: white;
+        font-weight: 800;
+    }
+    .subtitulo h2 {
+        font-size: 32px;
+        font-weight: 800;
+    }
+
 /* COWORKING */    
     
     .cowork {
@@ -715,8 +740,8 @@ body {
 
     .coworktitle {
         position:absolute;
-        right:20px;
-        top:20px;
+        right:10%;
+        top:10px;
         font-family: 'Montserrat',sans-serif;
         color:#000;
     }
@@ -727,5 +752,21 @@ body {
 
     .cowork_boxsubtitle {
         font-size: 10px;
+    }
+
+    .nosotros {
+        font-family: 'Montserrat',sans-serif;
+    }
+
+    .descubre {
+        font-family: 'Montserrat',sans-serif;
+    }
+
+    .idioma {
+        font-family: 'Montserrat',sans-serif;
+    }
+
+    .derechos {
+        font-family: 'Montserrat',sans-serif;
     }
 }

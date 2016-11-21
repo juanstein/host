@@ -3,12 +3,16 @@
   	<div class='col-md-4 footer-column'>
   	 <div class='col-md-12 nosotros_box'>
         <ul class='nosotros'>
-          <p>NOSOTROS</p>
+          <p>Nosotros</p>
           <li>Equipo</li>
           <li>Mision</li>
           <li>Vision</li>
           <li>Empleo</li>
           <li>Contacto</li>
+          <a href="/help">
+            <li>Ayuda</li>
+          </a>
+
         </ul>
   	 </div>
     </div>
@@ -29,9 +33,9 @@
     <div class='col-md-4 footer-column'>
       <div class='col-md-12 language_box'>
         <div class='language_choice textcenter'>
-          <p>IDIOMA</p>
-            <a href='espanol.php' class='espanol textcenter'>español</a><span>/</span>
-            <a href='espanol.php' class='english textcenter'>english</a>
+          <p class="idioma">Idioma</p>
+            <a href='espanol.php' class='espanol textcenter idioma'>Español</a><span> / </span>
+            <a href='espanol.php' class='english textcenter idioma'>English</a>
         </div>
       </div>
       <div class='col-md-12 social_container'>
@@ -42,12 +46,12 @@
                 <i class="fa fa-facebook" aria-hidden="true"></i>
               </li>
             </a>
-            <a href="http://www.facebook.com">
+            <a href="http://www.linkedin.com">
               <li class="linkedin textcenter">
                 <i class="fa fa-linkedin" aria-hidden="true"></i>
               </li>
             </a>
-            <a href="http://www.facebook.com">
+            <a href="http://www.youtube.com">
               <li class="youtube textcenter">
                 <i class="fa fa-play" aria-hidden="true"></i>
               </li>
@@ -55,7 +59,7 @@
           </ul>
         </div>
         <div class="col-md-6 footer_logo">
-         <a class="navbar-brand" href="index.php"><img class="logo" src="img/compass_white.png">Jost, inc.</a>
+         <a class="navbar-brand derechos" href="/">© 2016 Jost. Todos<br>los derechos reservados</a>
         </div>
       </div>
     </div>

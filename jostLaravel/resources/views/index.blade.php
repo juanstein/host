@@ -1,59 +1,121 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.master')
+@section('content')
 
-<head>
+  <!-- BODY -->
+  <header class="header_body">
+    <div class="header-darkener">
+      <!--<video autoplay loop>
+        <source src="img/spacious.mp4" type="video/mp4">
+      </video>-->
+      <div class="principal">
+        <div class="titulo">
+          <h1>Jost</h1>
+        </div>
+      </div>
+      <div class="subtitulo">
+        <div class="bajada col-md-12">
+          <h2>Encontrá el lugar perfecto y comenzá tu emprendimiento</h2>
+        </div>
+      </div>
+    </div>
+      <div class="principal_body">
+        <div class="col-md-12 container_jostnumbers">
+          <div class="col-md-10 col-md-offset-2 jostnumbers">
+            <ul class="col-md-9 jostnumbers_column">
+              <li class="col-md-4 jostnumbers_colum_info"><img src="img/login.png"><p class="number textcenter">Regístrate</p><p class="title textcenter">Tenemos más de 20,000 espacios disponibles para vos</p></li>
+              <li class="col-md-4 jostnumbers_colum_info"><img src="img/startup.png"><p class="number textcenter">Buscá</p><p class="title textcenter">4 ciudades donde poder poner en marcha tu emprendimiento</p></li>
+              <li class="col-md-4 jostnumbers_colum_info"><img src="img/building.png"><p class="number textcenter">Alquilá</p><p class="title textcenter">Poné a andar tus sueños <br> ¿Qué esperas?</p></li>
+            </ul>
+          </div>
+        </div>
 
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <meta name="author" content="">
+    </div>
+  </header>
 
-  <title>JOST</title>
+  <!-- COWORKING PLACES -->
 
-  <link rel="shortcut icon" href="img/compass.png" type="image/x-icon">
+  <section class="cowork">
+    <div class="col-md-10 col-md-offset-1 cowork_container">
+      <ul class="row col-md-12 primera-linea">
+        <li class="col-md-4">
+          <div class="primeralinea_primerimagen cowork_photobox1">
+            <div class="coworktitle">
+              <p class="cowork_boxtitle textcenter uppercase">La Maquinita</p>
+              <p class="cowork_boxsubtitle textcenter uppercase">- Buenos Aires - </p>
+            </div>
+          </div>
+        </li>
 
-  <!-- Bootstrap Core  -->
-  <link href="css/bootstrap.css" rel="stylesheet">
+        <li class="col-md-4 primeralinea_segundaimagen_box">
+          <div class="cowork_photobox2">
+            <div class="coworktitle">
+              <p class="cowork_boxtitle textcenter uppercase a3">Area Tres</p>
+              <p class="cowork_boxsubtitle textcenter uppercase">- Buenos Aires - </p>
+            </div>
+          </div>
+        </li>
 
-  <!-- CSS general-->
-  <link href="css/index.css" rel="stylesheet">
+        <li class="col-md-4">
+          <div class="primeralinea_terceraimagen cowork_photobox3">
+            <div class="coworktitle">
+              <p class="cowork_boxtitle textcenter uppercase">Hit</p>
+              <p class="cowork_boxsubtitle textcenter uppercase">- Buenos Aires - </p>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+      <ul class="row col-md-12 segunda-linea">
+
+        <li class="col-md-4">
+          <div class="segundalinea_primerimagen"></div>
+        </li>
+
+        <li class="col-md-4 segundalinea_segundaimagen_box">
+          <div class="segundalinea_segundaimagen cowork_photobox4">
+            <div class="coworktitle">
+              <p class="cowork_boxtitle textcenter uppercase">Urban Station</p>
+              <p class="cowork_boxsubtitle textcenter uppercase">- Buenos Aires - </p>
+            </div>
+          </div>
+        </li>
+
+        <li class="col-md-4">
+          <div class="segundalinea_terceraimagen cowork_photobox5">
+            <div class="coworktitle">
+              <p class="cowork_boxtitle textcenter uppercase">Join</p>
+              <p class="cowork_boxsubtitle textcenter uppercase">- Buenos Aires - </p>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+      <ul class="row col-md-12 tercera-linea">
+
+        <li class="col-md-4">
+          <div class="cowork_photobox6">
+            <div class="coworktitle">
+              <p class="cowork_boxtitle textcenter uppercase">Cespedes</p>
+              <p class="cowork_boxsubtitle textcenter uppercase">- Buenos Aires - </p>
+            </div>
+          </div>
+        </li>
+
+        <li class="col-md-4">
+          <div class="terceralinea_segundaimagen"></div>
+        </li>
+
+        <li class="col-md-4">
+          <div class="cowork_photobox7">
+            <div class="coworktitle">
+              <p class="cowork_boxtitle textcenter uppercase">Belephant</p>
+              <p class="cowork_boxsubtitle textcenter uppercase">- Buenos Aires - </p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+@endsection
 
 
-  <!-- Custom Fonts -->
-  <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-  <!--Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-  <![endif]-->
-
-</head>
-
-<body>
-
-    @include('header')
-    @include('body')
-    @include('cowork')
-    @include('footer')
-
-
-
-  <!-- jQuery -->
-  <script   src="js/jquery-2.1.1.js"></script>
-
-  <!--javascript customize-->
-  <script src="js/main.js"></script>
-
-  <!-- Bootstrap Core CDN -->
-  <script src="js/bootstrap.min.js" ></script>
-
-</body>
-
-</html>
