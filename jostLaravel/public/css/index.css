@@ -475,6 +475,7 @@ body {
 
     .session_content {
         float:left;
+        margin-top: 40px;
     }
 
     .session_body {
@@ -540,6 +541,7 @@ body {
     .regs_content {
         float:right;
         border-left:1px solid #ccc;
+        margin-top: 40px;
     }
 
     .regs_title {

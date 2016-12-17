@@ -24,7 +24,31 @@
         <ul class="nav navbar-nav navbar-right">
           <li class="host"><a href="/host">Convertite en Host</a></li>
           <li class="openhelp"><a href="ayuda.php" class="helpmobile"><img src="img/faq.png">Ayuda</a><a class="helpdesktop"><img src="img/faq.png"></a></li>
-          <li class="opensession"><a href="sesion.php" class="sessionmobile"><img src="img/user.png">Iniciar sesión</a><a class="sessiondesktop"><img src="img/user.png"></a></li>
+
+          @if (Auth::guest())
+            <li class="opensession"><a href="sesion.php" class="sessionmobile"><img src="img/user.png">Iniciar sesión</a><a class="sessiondesktop"><img src="img/user.png"></a></li>
+          @else
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                {{ Auth::user()->username }} <span class="caret"></span>
+              </a>
+
+              <ul class="dropdown-menu" role="menu">
+                <li>
+                  <a href="{{ url('/logout') }}"
+                     onclick="event.preventDefault();
+                     document.getElementById('logout-form').submit();">
+                    Logout
+                  </a>
+
+                  <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                  </form>
+                </li>
+              </ul>
+            </li>
+          @endif
+
 
         </ul>
 
@@ -77,7 +101,7 @@
 
           <!-- SESSION PART-->
                   <li class="col-md-6 no-padding session_tab">
-                    <a href="#session" class="active textcenter"><img src="img/user.png">Sesión</a>
+                    <a href="#session" class="active textcenter"><img src="img/user.png">Login</a>
                   </li>
           <!-- REGISTRATION PART-->
                   <li class="col-md-6 no-padding register_tab">
@@ -85,60 +109,163 @@
                   </li>
                 </ul>
             <!-- SESSION PART-->
+
                 <div class="session_content col-md-10 col-md-offset-1 show" id="session">
-                  <form method="GET" action="">
-                    <div class="modal-body session_body">
-                      <div class="session_title uppercase textcenter">
-                        <h1>Iniciar sesión</h1>
-                      </div>
-                      <div class="session_username">
-                        <label>Nombre de usuario</label>
-                        <input type="email" placeholder="email">
-                      </div>
-                      <div class="session_password">
-                        <label>Password</label><br>
-                        <input type="password" placeholder="password">
-                      </div>
-                      <div class="session_forget_password">
-                        <a href="forget_password.php">¿Olvidaste tu contraseña?</a>
+                  <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
+                    {{ csrf_field() }}
+
+                    <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                      <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+
+                      <div class="col-md-6">
+                        <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+
+                        @if ($errors->has('email'))
+                          <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                        @endif
                       </div>
                     </div>
-                    <div class="session_footer">
-                      <button type="submit" class="btn btn-primary session_button">Inicia sesión</button>
+
+                    <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                      <label for="password" class="col-md-4 control-label">Password</label>
+
+                      <div class="col-md-6">
+                        <input id="password" type="password" class="form-control" name="password" required>
+
+                        @if ($errors->has('password'))
+                          <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                        @endif
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <div class="col-md-6 col-md-offset-4">
+                        <div class="checkbox">
+                          <label>
+                            <input type="checkbox" name="remember"> Remember Me
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <div class="col-md-8 col-md-offset-4">
+                        <button type="submit" class="btn btn-primary">
+                          Login
+                        </button>
+
+                        <a class="btn btn-link" href="{{ url('/password/reset') }}">
+                          Forgot Your Password?
+                        </a>
+                      </div>
                     </div>
                   </form>
                 </div>
+
+
             <!-- REGISTRATION PART-->
+
+
+
+
                 <div class="regs_content col-md-12 hide" id="register">
-                  <div class="modal-body regs_body">
-                    <div class="regs_title uppercase textcenter">
-                      <h1>¿No estás registrado aún?</h1>
+                  <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
+                    {{ csrf_field() }}
+
+                    <div class="form-group{{ $errors->has('firstname') ? ' has-error' : '' }}">
+                      <label for="firstname" class="col-md-4 control-label">Firstname</label>
+
+                      <div class="col-md-6">
+                        <input id="firstname" type="text" class="form-control" name="firstname" value="{{ old('firstname') }}" required autofocus>
+
+                        @if ($errors->has('firstname'))
+                          <span class="help-block">
+                                        <strong>{{ $errors->first('firstname') }}</strong>
+                                    </span>
+                        @endif
+                      </div>
                     </div>
-                    <div class="regs_username">
-                      <label>Nombre</label>
-                      <input type="text" placeholder="Nombre">
+
+                    <div class="form-group{{ $errors->has('lastname') ? ' has-error' : '' }}">
+                      <label for="lastname" class="col-md-4 control-label">Lastname</label>
+
+                      <div class="col-md-6">
+                        <input id="lastname" type="text" class="form-control" name="lastname" value="{{ old('lastname') }}" required autofocus>
+
+                        @if ($errors->has('lastname'))
+                          <span class="help-block">
+                                        <strong>{{ $errors->first('lastname') }}</strong>
+                                    </span>
+                        @endif
+                      </div>
                     </div>
-                    <div class="regs_username">
-                      <label>Apellido</label>
-                      <input type="text" placeholder="Apellido">
+
+                    <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
+                      <label for="username" class="col-md-4 control-label">Username</label>
+
+                      <div class="col-md-6">
+                        <input id="username" type="text" class="form-control" name="username" value="{{ old('username') }}" required autofocus>
+
+                        @if ($errors->has('username'))
+                          <span class="help-block">
+                                        <strong>{{ $errors->first('username') }}</strong>
+                                    </span>
+                        @endif
+                      </div>
                     </div>
-                    <div class="regs_username">
-                      <label>Correo electronico</label>
-                      <input type="email" placeholder="Email">
+
+
+                    <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                      <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+
+                      <div class="col-md-6">
+                        <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+
+                        @if ($errors->has('email'))
+                          <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                        @endif
+                      </div>
                     </div>
-                    <div class="regs_username">
-                      <label>Password</label>
-                      <input type="password" placeholder="Password">
+
+                    <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                      <label for="password" class="col-md-4 control-label">Password</label>
+
+                      <div class="col-md-6">
+                        <input id="password" type="password" class="form-control" name="password" required>
+
+                        @if ($errors->has('password'))
+                          <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                        @endif
+                      </div>
                     </div>
-                    <div class="regs_username">
-                      <label>Confirmar Password</label>
-                      <input type="confimar password" placeholder="Password">
+
+                    <div class="form-group">
+                      <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
+
+                      <div class="col-md-6">
+                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                      </div>
                     </div>
-                  </div>
-                  <div class="regs_footer">
-                    <button type="submit" class="btn btn-primary regs_button">Registrarse</button>
-                  </div>
+
+                    <div class="form-group">
+                      <div class="col-md-6 col-md-offset-4">
+                        <button type="submit" class="btn btn-primary">
+                          Register
+                        </button>
+                      </div>
+                    </div>
+                  </form>
                 </div>
+
+
               </div>
             </div>
           </div>
